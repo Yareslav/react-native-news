@@ -4,7 +4,12 @@ import News from '../../../images/news.png';
 import globalStyles from '../../../globalStyles';
 import styles from '../style';
 
-const NewsContainer = ({data, navigation, maxTitleLength}) => {
+const NewsContainer = ({
+  data,
+  navigation,
+  maxTitleLength,
+  maxDescriptionLength,
+}) => {
   const pressHandler = () => {
     navigation.navigate('Preview', {
       data,
@@ -28,7 +33,9 @@ const NewsContainer = ({data, navigation, maxTitleLength}) => {
         <Text style={styles.news_title}>
           {makeTextShorter(data.title, maxTitleLength)}
         </Text>
-        <Text style={styles.news_description}>{data.description}</Text>
+        <Text style={styles.news_description}>
+          {makeTextShorter(data.description, maxDescriptionLength)}
+        </Text>
       </View>
     </TouchableOpacity>
   );

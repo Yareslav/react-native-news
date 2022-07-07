@@ -39,6 +39,7 @@ const List = ({navigation}) => {
               navigation={navigation}
               data={item}
               maxTitleLength={80}
+              maxDescriptionLength={200}
             />
           )}
           keyExtractor={item => item.key}
